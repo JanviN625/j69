@@ -10,7 +10,7 @@ function SummaryPage() {
   
   useEffect(() => {
     // Fetch data from the API
-    fetch('http://localhost:3001/innovation_value')
+    fetch('157.230.181.125:3000/innovation_value')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error fetching data:', error));
