@@ -2,27 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
-// Register Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function SummaryPage() {
   const [data, setData] = useState([]);
   
   useEffect(() => {
-    // Fetch data from the API
     fetch('http://157.230.181.125:3000/innovation_value')
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
-  // Prepare chart data
   const chartData = {
-    labels: data.map(item => item.innovation),  // Use "innovation" as labels
+    labels: data.map(item => item.innovation), 
     datasets: [
       {
         label: 'Innovation Value (in billions)',
-        data: data.map(item => parseFloat(item.value)),  // Use "value" for the data
+        data: data.map(item => parseFloat(item.value)), 
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1,
@@ -30,7 +27,6 @@ function SummaryPage() {
     ]
   };
 
-  // Chart options
   const chartOptions = {
     responsive: true,
     plugins: {

@@ -49,11 +49,9 @@ connection.connect();
 app.post('/api/login', (req, res) => {
     const { username, password } = req.body;
 
-    // Find the user with matching credentials
     const user = users.find(u => u.username === username && u.password === password);
 
     if (user) {
-        // Generate a token
         const token = jwt.sign({ id: user.id, username: user.username }, secretKey, { expiresIn: '3m' });
         res.json({
             success: true,
@@ -61,7 +59,6 @@ app.post('/api/login', (req, res) => {
             token,
         });
     } else {
-        // Send a single error response
         res.status(401).json({
             success: false,
             token: null,

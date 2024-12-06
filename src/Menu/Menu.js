@@ -6,9 +6,9 @@ function Menu({ setIsLoggedIn }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("token"); // Clear token from storage
-    setIsLoggedIn(false); // Update login state
-    navigate("/"); // Redirect to login page
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    navigate("/");
   };
 
   return (

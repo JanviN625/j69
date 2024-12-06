@@ -12,7 +12,6 @@ import {
   Legend,
 } from 'chart.js';
 
-// Register chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -30,38 +29,34 @@ function ReportsPage() {
       {
         label: 'Number of Clinicians Over Time',
         data: [],
-        borderColor: 'rgba(75, 192, 192, 1)',  // Line color
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',  // Line fill color
-        tension: 0.4,  // Smooth curve
+        borderColor: 'rgba(75, 192, 192, 1)', 
+        backgroundColor: 'rgba(75, 192, 192, 0.2)', 
+        tension: 0.4, 
         borderWidth: 2,
       },
     ],
   });
 
-  // Fetch data from backend API
   useEffect(() => {
     axios
-      .get('http://157.230.181.125:3000/telemedicine_growth')  // Replace with your actual API URL
+      .get('http://157.230.181.125:3000/telemedicine_growth') 
       .then((response) => {
         const data = response.data;
 
-        // Log data for debugging
         console.log('Fetched data:', data);
 
-        // Map data into the chart's expected format
-        const labels = data.map((item) => item.year);  // Use 'year' as labels
-        const values = data.map((item) => item.num_of_clinicians);  // Use 'num_of_clinicians' as values
+        const labels = data.map((item) => item.year); 
+        const values = data.map((item) => item.num_of_clinicians); 
 
-        // Update chart data
         setChartData({
-          labels: labels,  // years as labels
+          labels: labels,
           datasets: [
             {
               label: 'Number of Clinicians Over Time',
-              data: values,  // values for the line chart
-              borderColor: 'rgba(75, 192, 192, 1)',  // Line color
-              backgroundColor: 'rgba(75, 192, 192, 0.2)',  // Line fill color
-              tension: 0.4,  // Smooth curve
+              data: values,  
+              borderColor: 'rgba(75, 192, 192, 1)',  
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',  
+              tension: 0.4, 
               borderWidth: 2,
             },
           ],
@@ -72,7 +67,6 @@ function ReportsPage() {
       });
   }, []);
 
-  // Chart options
   const options = {
     responsive: true,
     plugins: {

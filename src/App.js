@@ -17,13 +17,11 @@ function App() {
       <h1>Health Innovations in the Last 6 Months</h1>
       {isLoggedIn && <Menu setIsLoggedIn={setIsLoggedIn} />}
       <Routes>
-        {/* Public route */}
         <Route
           path="/"
           element={<LoginPage setIsLoggedIn={setIsLoggedIn} />}
         />
 
-        {/* Protected routes */}
         <Route
           path="/dashboard"
           element={
