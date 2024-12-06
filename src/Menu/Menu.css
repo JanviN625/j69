@@ -1,0 +1,28 @@
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav {
+    background-color: coral;
+    padding: 10px;
+    display: flex;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    margin: 10px;
+}

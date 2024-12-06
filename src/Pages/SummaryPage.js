@@ -3,7 +3,7 @@ import React from 'react';
 function SummaryPage() {
   return (
     <div>
-      <h1>Summary Page</h1>
+      <h2>Summary Page</h2>
     </div>
   );
 }

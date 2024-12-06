@@ -39,7 +39,7 @@ function LoginPage({ setIsLoggedIn }) {
 
   return (
     <div>
-      <h1>Login Page</h1>
+      <h2>Login Page</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleLogin}>
         <p>

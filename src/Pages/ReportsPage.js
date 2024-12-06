@@ -3,7 +3,7 @@ import React from 'react';
 function ReportsPage() {
   return (
     <div>
-      <h1>Reports</h1>
+      <h2>Reports</h2>
     </div>
   );
 }
