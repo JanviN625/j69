@@ -41,7 +41,7 @@ function ReportsPage() {
   // Fetch data from backend API
   useEffect(() => {
     axios
-      .get('157.230.181.125:3000/telemedicine_growth')  // Replace with your actual API URL
+      .get('http://157.230.181.125:3000/telemedicine_growth')  // Replace with your actual API URL
       .then((response) => {
         const data = response.data;
 

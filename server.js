@@ -9,14 +9,14 @@ const app = express ();
 const port = 3000;
 
 app.use (cors ({
-    origin: '157.230.181.125',
+    origin: 'http://157.230.181.125',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-type', 'Authorization']
 }));
 app.use (bodyParser.json ());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '157.230.181.125');  // Allow frontend port
+    res.setHeader('Access-Control-Allow-Origin', 'http://157.230.181.125');  // Allow frontend port
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST');  // Allow methods
     next();
@@ -89,5 +89,5 @@ app.get ('/', (req, res) => {
 });
 
 app.listen (port, () => {
-  console.log (`Listening at 157.230.181.125${port}`);
+  console.log (`Listening at http://157.230.181.125${port}`);
 });

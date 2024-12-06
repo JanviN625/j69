@@ -18,7 +18,7 @@ function LoginPage({ setIsLoggedIn }) {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("157.230.181.125:3000/api/login", {
+    const response = await fetch("http://157.230.181.125:3000/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
