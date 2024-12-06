@@ -45,7 +45,7 @@ function SummaryPage() {
     <div style={{margin: "20px"}}>
       <h2>Summary</h2>
       <Bar data={chartData} options={chartOptions} />
-      <p></p>
+      <p>There is not a lot of data about the values of these healthcare innovations in the past 6 months specifically. However, the evaluations of them during the year 2024 are presented to represent the scale and current popularity of each. While some are very small, they are set to have large growth in coming years.</p>
       <p>Sources:</p>
       <ul>
         <li><a style={{ color: 'blue', textDecoration: 'underline' }} href="https://finance.yahoo.com/news/23-3-cagr-telehealth-telemedicine-111000913.html">At 23.3% CAGR, Telehealth and Telemedicine Market Share Will be Worth USD 813.7 Billion by 2034</a></li>
